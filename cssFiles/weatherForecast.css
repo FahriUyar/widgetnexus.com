@@ -1,0 +1,190 @@
+/* Current Weather Forecast Start -------------------------------------------------------------------- */
+
+
+#currentWeatherContent .container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 80% !important;
+    max-width: none !important;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #weatherForecastDailyArea .container {
+        margin-top: 200px;
+    }
+
+    #weatherForecastArea {
+        margin-top: 200px;
+    }
+
+    form #citySelect {
+        width: 50%;
+    }
+}
+
+/* Select2 açılır kutusunun yüksekliği ve font boyutu */
+.select2-container--default .select2-selection--single {
+    height: 200px;
+    font-size: 16px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 40px;
+    /* Kendi yüksekliğinize göre bu değeri değiştirin */
+}
+
+/* Açılır seçeneklerin yüksekliği ve font boyutu */
+.select2-container--default .select2-results__option {
+    height: 40px;
+    font-size: 16px;
+}
+
+
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#currentWeatherContent .cityInput {
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 25px;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+#currentWeatherContent .temperature {
+    height: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentWeatherContent .temperature span {
+    font-weight: 500;
+}
+
+
+#currentWeatherContent p {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (max-width: 768px) {
+
+    #currentWeatherContent .firstTwoP {
+        display: block;
+    }
+
+    #currentWeatherContent .dataBox {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
+
+.centered {
+    margin: auto;
+}
+
+#currentWeatherContent .col-12 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+#currentWeatherContent #dispNone {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 86, 121, 0.2945553221288515) 0%, rgba(255, 85, 0, 0.2805497198879552) 100%);
+}
+
+#currentWeatherContent .dataBox span {
+    font-weight: 500;
+}
+
+#currentWeatherContent .description {
+    font-weight: 400;
+}
+
+/* Current Weather Forecast End ------------------------------------------------------------------ */
+
+
+/* Daily Weather Forecast Start ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+    #weatherTable th,
+    #weatherTable td {
+        font-size: 12px;
+    }
+}
+
+/* Mobil görünümde tabloyu kaydırılabilir yapmak için */
+.table-responsive {
+    overflow-x: auto;
+    /* Yatay kaydırma ekleniyor */
+    -webkit-overflow-scrolling: touch;
+    /* Mobil cihazlarda kaydırma deneyimini iyileştirir */
+}
+
+table {
+    min-width: 600px;
+    /* Tablo elemanlarının daralmamasını sağlamak için min genişlik */
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        /* Mobilde genişliği ekran kadar yap */
+    }
+}
+
+.table-container {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+#weatherTable {
+    width: 100%;
+    /* Tablo genişliğini tam yap */
+    table-layout: auto;
+}
+
+
+#weatherTable th,
+#weatherTable td {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+
+#weatherTable th,
+#weatherTable td {
+    word-wrap: break-word;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(66, 121, 9, 0.5942752100840336) 0%, rgba(0, 236, 255, 0.38699229691876746) 100%);
+    text-align: center;
+    font-weight: 500;
+}
+
+td {
+    padding: 15px;
+    font-weight: 400;
+}
+
+
+/* Daily Weather Forecast End -------------------------------------------------------------------- */
