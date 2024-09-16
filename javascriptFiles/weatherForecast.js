@@ -1,4 +1,3 @@
-// JSON verisini buraya ekleyin veya bir dosyadan çekin
 $(document).ready(function () {
     const cities = {
         "Header": {
@@ -98,29 +97,23 @@ $(document).ready(function () {
     let citySelect = $('#citySelect');
 
     cities.Data.City.forEach(function (city) {
-        citySelect.append(new Option(city.CityName, city.CityCode));
+        citySelect.append(new Option(city.CityName, city.CityName)); // cityCode yerine cityName değerini value olarak ekledik
     });
 
     // Select2'yi initialize et
     citySelect.select2({
         placeholder: "Select a city",
         allowClear: true,
-    });
-
-    const cityCodeToName = {};
-    cities.Data.City.forEach(city => {
-        cityCodeToName[city.CityCode] = city.CityName;
+        tags: true
     });
 
     // Seçim değiştiğinde çalışacak fonksiyon
     $('#citySelect').on('change', function () {
-        let selectedCityCode = $(this).val(); // Seçilen şehir kodu
-        let selectedCityName = cityCodeToName[selectedCityCode]; // Şehir adını bul
+        let selectedCityName = $(this).val(); // Seçilen şehir adı
         console.log(selectedCityName); // Şehir adını konsola yazdır
 
         // Fonksiyonları çağırıyoruz
         handleSelectionChange(selectedCityName);
-
     });
 });
 

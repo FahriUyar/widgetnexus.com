@@ -34,7 +34,7 @@ function formatNumber(number) {
 document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         event.preventDefault(); // Sayfanın yeniden yüklenmesini engeller
-        document.querySelector("#convertButton").click();
+        document.querySelector("#convertButton button").click();
     }
 });
 

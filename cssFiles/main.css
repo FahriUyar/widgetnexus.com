@@ -21,11 +21,11 @@
 }
 
 #currencyAppArea {
-    height: 500px;
+    height: auto;
 }
 
 #weatherForecastArea {
-    height: 500px;
+    height: auto;
 }
 
 #weatherForecastArea .container {
@@ -64,6 +64,11 @@
     #headertop .navbar-logo img {
         height: 50px;
         width: 100px;
+    }
+
+    #headertop {
+        margin: 0;
+        padding: 0;
     }
 }
 
@@ -146,4 +151,15 @@
 .nav-link:hover {
     background-color: rgba(226, 100, 100, 0.1);
     border-radius: 4px;
+}
+
+
+#footer .col {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.footerLogo img {
+    width: 200px;
+    height: 150px;
 }
