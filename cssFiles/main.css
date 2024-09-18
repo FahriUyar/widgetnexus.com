@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.swapButton .btn i {
+    font-family: 'Font Awesome 5 Free', sans-serif!important;
+    /* İkon font-family */
 }
 
 .tradingview-widget-container__widget {
@@ -55,15 +57,17 @@
     justify-content: center;
 }
 
+.navbar-nav .nav-item .nav-link {
+    color: black;
+}
+
 #headertop .navbar-logo img {
     height: 100px;
-    width: 200px;
 }
 
 @media (max-width: 768px) {
     #headertop .navbar-logo img {
         height: 50px;
-        width: 100px;
     }
 
     #headertop {
@@ -102,16 +106,22 @@
 
 
 #widgetnexusheader {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0.5746673669467788) 100%);
-    opacity: 0.8;
+    background: rgb(208,148,148);
+    background: linear-gradient(90deg, rgba(208,148,148,0.9192051820728291) 0%, rgba(208,148,148,1) 100%);
 }
 
 
 /* Header - navbar */
 
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px 0px 0px 5px;
+}
+
 .navbar-toggler {
-    border: 2px solid #fff;
     border-radius: 5px;
     padding-bottom: 200px;
 }
@@ -162,4 +172,10 @@
 .footerLogo img {
     width: 200px;
     height: 150px;
+}
+
+#footer {
+    margin-top: 80px;
+    background: rgb(208,148,148);
+    background: linear-gradient(90deg, rgba(208,148,148,0.9192051820728291) 0%, rgba(208,148,148,1) 100%);
 }

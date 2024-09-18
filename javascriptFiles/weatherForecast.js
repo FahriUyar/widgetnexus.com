@@ -104,7 +104,10 @@ $(document).ready(function () {
     citySelect.select2({
         placeholder: "Select a city",
         allowClear: true,
-        tags: true
+    });
+
+    $(".js-example-theme-single").select2({
+        theme: "classic"
     });
 
     // Seçim değiştiğinde çalışacak fonksiyon
@@ -186,31 +189,6 @@ async function getWeatherDaily(cityName) {
         const weatherBody = document.getElementById('weatherBody');
         weatherBody.innerHTML = ''; // Önceki verileri temizle
 
-        // Tablo başlıklarını oluşturuyoruz
-        const headerRow = document.createElement('tr');
-
-        const dateHeader = document.createElement('th');
-        dateHeader.textContent = "Date & Time";
-        headerRow.appendChild(dateHeader);
-
-        const iconHeader = document.createElement('th');
-        iconHeader.textContent = "Expected Weather";
-        headerRow.appendChild(iconHeader);
-
-        const tempHeader = document.createElement('th');
-        tempHeader.textContent = "Temperature (°C)";
-        headerRow.appendChild(tempHeader);
-
-        const sensedTempHeader = document.createElement('th');
-        sensedTempHeader.textContent = "Sensed Temperature (°C)";
-        headerRow.appendChild(sensedTempHeader);
-
-        const humidityHeader = document.createElement('th');
-        humidityHeader.textContent = "Humidity (%)";
-        headerRow.appendChild(humidityHeader);
-
-        // Başlıkları tabloya ekliyoruz
-        weatherBody.appendChild(headerRow);
 
         // Her veri için bir satır oluşturuyoruz
         for (let i = 0; i < 28; i++) {
@@ -220,6 +198,8 @@ async function getWeatherDaily(cityName) {
 
             // Tarih & Zaman
             const dateCell = document.createElement('td');
+            const dateTime = new Date(weatherItem.dt_txt);
+            const hours = dateTime.getHours();
             dateCell.textContent = formatDateTime(weatherItem.dt_txt);
             row.appendChild(dateCell);
 
@@ -246,6 +226,33 @@ async function getWeatherDaily(cityName) {
             humidityCell.textContent = weatherItem.main.humidity;
             row.appendChild(humidityCell);
 
+            // Saat aralıklarına göre arka plan rengini belirleme
+            if (hours === 6) {
+                row.style.background = 'rgba(255,158,0,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(255,158,0,0.6) 0%, rgba(214,185,36,0.6) 100%)'; // Koyu sarı-turuncu gradient
+            } else if (hours === 9) {
+                row.style.background = 'rgba(210,188,39,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(210,188,39,0.6) 0%, rgba(254,255,0,0.6) 100%)'; // Orta sarı-turuncu
+            } else if (hours === 12) {
+                row.style.background = 'rgba(242,252,0,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(242,252,0,0.6) 0%, rgba(228,141,9,0.6) 100%)'; // Orta sarı-turuncu
+            } else if (hours === 15) {
+                row.style.background = 'rgba(242,147,3,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(242,147,3,0.6) 0%, rgba(195,191,185,0.6) 100%)'; // Orta sarı-turuncu
+            } else if (hours === 18) {
+                row.style.background = 'rgba(230,226,223,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(230,226,223,0.6) 0%, rgba(125,123,121,0.6) 100%)'; // Orta sarı-turuncu
+            } else if (hours === 21) {
+                row.style.background = 'rgb(163,162,157,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(163,162,157,0.6) 0%, rgba(20,20,20,0.6) 100%)'; // Açık gri #ECEFF1'
+            } else if (hours === 0) {
+                row.style.background = 'rgba(55,52,50,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(55,52,50,0.6) 0%, rgba(116,113,109,0.6) 100%)'; // Orta gri
+            } else if (hours === 3) {
+                row.style.background = 'rgba(158,156,151,0.6)';
+                row.style.background = 'linear-gradient(90deg, rgba(158,156,151,0.6) 0%, rgba(236,145,6,0.6) 100%)'; // Koyu gri #B0BEC5
+            }
+
             // Satırı tabloya ekliyoruz
             weatherBody.appendChild(row);
         }
@@ -254,6 +261,18 @@ async function getWeatherDaily(cityName) {
         console.error('Error fetching weather data:', error);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tableHeader = document.querySelector('#weatherTable thead tr');
+
+    if (tableHeader) {
+        tableHeader.style.position = 'sticky';
+        tableHeader.style.top = '0';
+        tableHeader.style.zIndex = '1000'; // Başlığın içeriğin üzerinde kalmasını sağlar
+        tableHeader.style.backgroundColor = '#fff'; // Arka plan rengi vererek başlığın okunaklı kalmasını sağlarız
+    }
+});
+
 
 
 // Date Format 
