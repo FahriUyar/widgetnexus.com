@@ -1,121 +1,110 @@
 $(document).ready(function () {
-    const cities = {
-        "Header": {
-            "StatusCode": "APIGW000000",
-            "StatusDescription": "Completed",
-            "ObjectID": "5769340a-6950-4860-82b1-6c254262705f"
-        },
-        "Data": {
-            "City": [
-                { "CityCode": "0", "CityName": "Select a City..." },
-                { "CityCode": "1", "CityName": "Adana" },
-                { "CityCode": "2", "CityName": "Adıyaman" },
-                { "CityCode": "3", "CityName": "Afyonkarahisar" },
-                { "CityCode": "4", "CityName": "Ağrı" },
-                { "CityCode": "5", "CityName": "Amasya" },
-                { "CityCode": "6", "CityName": "Ankara" },
-                { "CityCode": "7", "CityName": "Antalya" },
-                { "CityCode": "8", "CityName": "Artvin" },
-                { "CityCode": "9", "CityName": "Aydın" },
-                { "CityCode": "10", "CityName": "Balıkesir" },
-                { "CityCode": "11", "CityName": "Bilecik" },
-                { "CityCode": "12", "CityName": "Bingöl" },
-                { "CityCode": "13", "CityName": "Bitlis" },
-                { "CityCode": "14", "CityName": "Bolu" },
-                { "CityCode": "15", "CityName": "Burdur" },
-                { "CityCode": "16", "CityName": "Bursa" },
-                { "CityCode": "17", "CityName": "Çanakkale" },
-                { "CityCode": "18", "CityName": "Çankırı" },
-                { "CityCode": "19", "CityName": "Çorum" },
-                { "CityCode": "20", "CityName": "Denizli" },
-                { "CityCode": "21", "CityName": "Diyarbakır" },
-                { "CityCode": "22", "CityName": "Edirne" },
-                { "CityCode": "23", "CityName": "Elazığ" },
-                { "CityCode": "24", "CityName": "Erzincan" },
-                { "CityCode": "25", "CityName": "Erzurum" },
-                { "CityCode": "26", "CityName": "Eskişehir" },
-                { "CityCode": "27", "CityName": "Gaziantep" },
-                { "CityCode": "28", "CityName": "Giresun" },
-                { "CityCode": "29", "CityName": "Gümüşhane" },
-                { "CityCode": "30", "CityName": "Hakkari" },
-                { "CityCode": "31", "CityName": "Hatay" },
-                { "CityCode": "32", "CityName": "Isparta" },
-                { "CityCode": "33", "CityName": "Mersin" },
-                { "CityCode": "34", "CityName": "İstanbul" },
-                { "CityCode": "35", "CityName": "İzmir" },
-                { "CityCode": "36", "CityName": "Kars" },
-                { "CityCode": "37", "CityName": "Kastamonu" },
-                { "CityCode": "38", "CityName": "Kayseri" },
-                { "CityCode": "39", "CityName": "Kırklareli" },
-                { "CityCode": "40", "CityName": "Kırşehir" },
-                { "CityCode": "41", "CityName": "Kocaeli" },
-                { "CityCode": "42", "CityName": "Konya" },
-                { "CityCode": "43", "CityName": "Kütahya" },
-                { "CityCode": "44", "CityName": "Malatya" },
-                { "CityCode": "45", "CityName": "Manisa" },
-                { "CityCode": "46", "CityName": "Kahramanmaraş" },
-                { "CityCode": "47", "CityName": "Mardin" },
-                { "CityCode": "48", "CityName": "Muğla" },
-                { "CityCode": "49", "CityName": "Muş" },
-                { "CityCode": "50", "CityName": "Nevşehir" },
-                { "CityCode": "51", "CityName": "Niğde" },
-                { "CityCode": "52", "CityName": "Ordu" },
-                { "CityCode": "53", "CityName": "Rize" },
-                { "CityCode": "54", "CityName": "Sakarya" },
-                { "CityCode": "55", "CityName": "Samsun" },
-                { "CityCode": "56", "CityName": "Siirt" },
-                { "CityCode": "57", "CityName": "Sinop" },
-                { "CityCode": "58", "CityName": "Sivas" },
-                { "CityCode": "59", "CityName": "Tekirdağ" },
-                { "CityCode": "60", "CityName": "Tokat" },
-                { "CityCode": "61", "CityName": "Trabzon" },
-                { "CityCode": "62", "CityName": "Tunceli" },
-                { "CityCode": "63", "CityName": "Şanlıurfa" },
-                { "CityCode": "64", "CityName": "Uşak" },
-                { "CityCode": "65", "CityName": "Van" },
-                { "CityCode": "66", "CityName": "Yozgat" },
-                { "CityCode": "67", "CityName": "Zonguldak" },
-                { "CityCode": "68", "CityName": "Aksaray" },
-                { "CityCode": "69", "CityName": "Bayburt" },
-                { "CityCode": "70", "CityName": "Karaman" },
-                { "CityCode": "71", "CityName": "Kırıkkale" },
-                { "CityCode": "72", "CityName": "Batman" },
-                { "CityCode": "73", "CityName": "Şırnak" },
-                { "CityCode": "74", "CityName": "Bartın" },
-                { "CityCode": "75", "CityName": "Ardahan" },
-                { "CityCode": "76", "CityName": "Iğdır" },
-                { "CityCode": "77", "CityName": "Yalova" },
-                { "CityCode": "78", "CityName": "Karabük" },
-                { "CityCode": "79", "CityName": "Kilis" },
-                { "CityCode": "80", "CityName": "Osmaniye" },
-                { "CityCode": "81", "CityName": "Düzce" }
-            ]
-        }
-    }
+    const cities = [
+        "Select a City...",
+        "Adana",
+        "Adıyaman",
+        "Afyonkarahisar",
+        "Ağrı",
+        "Amasya",
+        "Ankara",
+        "Antalya",
+        "Artvin",
+        "Aydın",
+        "Balıkesir",
+        "Bilecik",
+        "Bingöl",
+        "Bitlis",
+        "Bolu",
+        "Burdur",
+        "Bursa",
+        "Çanakkale",
+        "Çankırı",
+        "Çorum",
+        "Denizli",
+        "Diyarbakır",
+        "Edirne",
+        "Elazığ",
+        "Erzincan",
+        "Erzurum",
+        "Eskişehir",
+        "Gaziantep",
+        "Giresun",
+        "Gümüşhane",
+        "Hakkari",
+        "Hatay",
+        "Isparta",
+        "Mersin",
+        "İstanbul",
+        "İzmir",
+        "Kars",
+        "Kastamonu",
+        "Kayseri",
+        "Kırklareli",
+        "Kırşehir",
+        "Kocaeli",
+        "Konya",
+        "Kütahya",
+        "Malatya",
+        "Manisa",
+        "Kahramanmaraş",
+        "Mardin",
+        "Muğla",
+        "Muş",
+        "Nevşehir",
+        "Niğde",
+        "Ordu",
+        "Rize",
+        "Sakarya",
+        "Samsun",
+        "Siirt",
+        "Sinop",
+        "Sivas",
+        "Tekirdağ",
+        "Tokat",
+        "Trabzon",
+        "Tunceli",
+        "Şanlıurfa",
+        "Uşak",
+        "Van",
+        "Yozgat",
+        "Zonguldak",
+        "Aksaray",
+        "Bayburt",
+        "Karaman",
+        "Kırıkkale",
+        "Batman",
+        "Şırnak",
+        "Bartın",
+        "Ardahan",
+        "Iğdır",
+        "Yalova",
+        "Karabük",
+        "Kilis",
+        "Osmaniye",
+        "Düzce"
+    ];
 
-    // select elementine şehirleri eklemek
     let citySelect = $('#citySelect');
 
-    cities.Data.City.forEach(function (city) {
-        citySelect.append(new Option(city.CityName, city.CityName)); // cityCode yerine cityName değerini value olarak ekledik
+    cities.forEach(function (city) {
+        citySelect.append(new Option(city));
     });
 
-    // Select2'yi initialize et
     citySelect.select2({
         placeholder: "Select a city",
         allowClear: true,
+    });
+
+    $(".js-example-tags").select2({
+        tags: true
     });
 
     $(".js-example-theme-single").select2({
         theme: "classic"
     });
 
-    // Seçim değiştiğinde çalışacak fonksiyon
     $('#citySelect').on('change', function () {
-        let selectedCityName = $(this).val(); // Seçilen şehir adı
-        console.log(selectedCityName); // Şehir adını konsola yazdır
-
-        // Fonksiyonları çağırıyoruz
+        let selectedCityName = $(this).val();
         handleSelectionChange(selectedCityName);
     });
 });
@@ -183,8 +172,6 @@ async function getWeatherDaily(cityName) {
     try {
         const daily = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`);
         const dailyData = await daily.json();
-
-        console.log(dailyData);
 
         const weatherBody = document.getElementById('weatherBody');
         weatherBody.innerHTML = ''; // Önceki verileri temizle

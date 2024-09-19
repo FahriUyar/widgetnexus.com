@@ -8,29 +8,12 @@
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .cityInput {
-        width: 100%;
-    }
-}
-
-
 #form {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-
-#currentWeatherContent .cityInput {
-    width: 60%;
-    margin: auto;
-    border-radius: 10px;
-    padding: 25px;
-    outline: none;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-
 
 #currentWeatherContent .temperature {
     height: 28%;
@@ -170,6 +153,8 @@ td {
 
 
 /* Daily Weather Forecast End -------------------------------------------------------------------- */
+
+/* Select 2 Framework Start */
 
 .select2-container .select2-selection--single {
     height: 60px !important;

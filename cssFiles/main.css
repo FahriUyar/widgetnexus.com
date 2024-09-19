@@ -6,7 +6,7 @@
 }
 
 .swapButton .btn i {
-    font-family: 'Font Awesome 5 Free', sans-serif!important;
+    font-family: 'Font Awesome 5 Free', sans-serif !important;
     /* İkon font-family */
 }
 
@@ -44,56 +44,24 @@
 
 
 /* NAVBAR */
+
+
+
 #headertop {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-.navbar {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar-nav .nav-item .nav-link {
-    color: black;
+    border-bottom: 1px solid #000000;
 }
 
 #headertop .navbar-logo img {
-    height: 100px;
+    height: 150px;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
     #headertop .navbar-logo img {
-        height: 50px;
-    }
-
-    #headertop {
-        margin: 0;
-        padding: 0;
+        height: 100px;
     }
 }
 
-.navbar-collapse {
-    justify-content: end;
-    color: #fff;
-}
-
-.navbar-collapse .nav-link {
-    color: #ffffff;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-.navbar-collapse .nav-link:hover {
-    background-color: rgba(255, 235, 205, 0.3);
-}
-
-.navbar-nav {
-    list-style: none;
-}
 
 
 .navbar-nav li a {
@@ -104,62 +72,12 @@
     text-align: center;
 }
 
-
 #widgetnexusheader {
-    background: rgb(208,148,148);
-    background: linear-gradient(90deg, rgba(208,148,148,0.9192051820728291) 0%, rgba(208,148,148,1) 100%);
-}
-
-
-/* Header - navbar */
-
-.navbar-toggler:focus,
-.navbar-toggler:active {
-    outline: none;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    padding: 10px 0px 0px 5px;
-}
-
-.navbar-toggler {
-    border-radius: 5px;
-    padding-bottom: 200px;
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 24px;
-    height: 2px;
-    background-color: transparent;
-    position: relative;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after,
-.navbar-toggler-icon span {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-}
-
-.navbar-toggler-icon::before {
-    top: 0;
-}
-
-.navbar-toggler-icon span {
-    top: 8px;
-}
-
-.navbar-toggler-icon::after {
-    top: 16px;
+    background: transparent;
 }
 
 .nav-link:hover {
-    background-color: rgba(226, 100, 100, 0.1);
+    background-color: rgba(63, 6, 197, 0.1);
     border-radius: 4px;
 }
 
@@ -170,12 +88,14 @@
 }
 
 .footerLogo img {
-    width: 200px;
     height: 150px;
 }
 
 #footer {
     margin-top: 80px;
-    background: rgb(208,148,148);
-    background: linear-gradient(90deg, rgba(208,148,148,0.9192051820728291) 0%, rgba(208,148,148,1) 100%);
+    background: rgb(122, 117, 143);
+}
+
+#footer p {
+    color: #ffffff;
 }

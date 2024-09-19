@@ -8,7 +8,6 @@ const firstRate = document.getElementById('firstRate');
 
 function updateRate() {
     fetch(`https://v6.exchangerate-api.com/v6/f1c527bc47f9d19199b70431/latest/${currencyFirst.value}`).then((res) => res.json()).then((data) => {
-        console.log(data);
         const rate = data.conversion_rates[currencySecond.value];
         firstRate.textContent = `1 ${currencyFirst.value} = ${rate.toFixed(2)} ${currencySecond.value}`;
         convertedCurrency.textContent = `${amount.value} ${currencyFirst.value} * ${rate.toFixed(2)} = ${formatNumber((amount.value * rate).toFixed(2))} ${currencySecond.value}`
