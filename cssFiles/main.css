@@ -12,6 +12,7 @@
 
 body h2 {
     margin-top: 3rem !important;
+    text-shadow: 4px 4px 5px rgba(71, 5, 224, 0.3);
 }
 
 #Layer_1 {
